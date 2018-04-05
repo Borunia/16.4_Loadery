@@ -1,15 +1,33 @@
 import React from 'react';
 import uuid from 'uuid';
 import style from './App.css';
-import Title from '../components/Title.js'
+import Title from '../components/Title';
+import TodoList from '../components/TodoList';
+import TodoForm from '../components/TodoForm'
+
+
+
 
 
 class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            data: []
+            data: [{
+                id: 1,
+                  text: 'clean room'
+              }, {
+              id: 2,
+                  text: 'wash the dishes'
+              }, {
+              id: 3,
+                  text: 'feed my cat'
+            }]
         };
+
+        this.addTodo = this.addTodo.bind(this);
+        this.removeTodo = this.removeTodo.bind(this);
+
     }
     addTodo(val){
         const todo = {
@@ -28,10 +46,13 @@ class App extends React.Component {
     render() {
         return (
             <div className={style.TodoApp}>
-                <Title title ="My list" number={this.state.data.length} />
+                <Title title ="MY TASK" number={this.state.data.length} />
+                <TodoForm add={this.addTodo} />
+                <TodoList todos={this.state.data}
+                      remove={this.removeTodo} />
             </div>
         );
     }   
 }
 
-export default App
+export default App;
