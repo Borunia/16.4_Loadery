@@ -4,10 +4,6 @@ import App from './containers/App';
 import uuid from 'uuid';
 import { AppContainer } from 'react-hot-loader';
 
-
-
-
-
 ReactDOM.render(
     <App />,
     document.getElementById('app')
