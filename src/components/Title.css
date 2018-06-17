@@ -1,0 +1,17 @@
+
+.Title {
+  text-align: center;
+}
+
+.Title h1 {
+  color:grey;
+  font-size: 62px;
+  margin: 0;
+  padding: 20px;
+  line-height: 72px;
+}
+
+.Title h2 {
+  margin: 0 0 20px 0;
+  color: brown;
+}
